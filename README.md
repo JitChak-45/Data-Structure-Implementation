@@ -5,10 +5,8 @@
 
 | No   | Title                                    | Implementation                                                      |
 | --- | ---------------------------------------- | ------------------------------------------------------------- |
-| 1   | LinkList Impementation            | [Click Here](https://github.com/debapriyo007/Data-Structure-Implementation/blob/main/LinkedList/LinkedList.java)
+| 1   | LinkedList Impementation            | [Click Here](https://github.com/debapriyo007/Data-Structure-Implementation/blob/main/LinkedList/LinkedList.java)
 
-
-Feel free to explore each solution for detailed explanations and implementations.
 
 ## Contributing 🧑🏽‍💻
 
