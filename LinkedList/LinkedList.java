@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class LinkedList {
 
     //Creating a Node Class.
@@ -19,7 +20,7 @@ public class LinkedList {
 
     //Creating the methords of LinkedList.
 
-    //1st Methord Create() 
+    //1st:  Methord Create..
     public void create(){
         Scanner sc = new Scanner(System.in); //creating the Scanner object for taking the input from user.
         System.out.print("Enter the number of nodes you want to create: ");
@@ -43,8 +44,9 @@ public class LinkedList {
         }
     }
 
-    //2nd Methord Display()
+    //2nd : Methord Display..
     public void display(){
+        System.out.println();
         Node curr = head; //take a pointer on head node
         while(curr != null){ //if curr is not null. 
             System.out.print(curr.data + " -> "); //then print the data of curr node.
@@ -52,6 +54,42 @@ public class LinkedList {
         }
         System.out.println("NULL"); //when curr is null then print NULL.
     }
+
+    // 3rd : Methord InsertAtBegining .
+    public void insertAtBeg(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the data you want to insert at the beginning: ");
+        int data = sc.nextInt();
+        Node newNode = new Node(data); //crating the new node with the data.
+        newNode.next = head;//as i want to insert the new node at the beginning so, 
+        //newnode next will be pointing the head.
+        head = newNode;  // now update my head to the new node.
+    }
+
+    // 4th : Methord InsertAtEnd.
+    public void insertAtEnd(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the data you want to insert at the end: ");
+        int data = sc.nextInt();
+        Node newNode = new Node(data); //creating the new node with the data.
+        tail.next = newNode; // tail alway be in the last node so, 
+        // i just pointing the tail next to my new craeted node.
+        tail = newNode; // update my tail pointer.
+        //tail always pointing the last node of the LinkedList.
+    }
+
+    //5th Size of the LinkedList.
+    
+    public int sizeOfLL(){
+        int size = 0; //why initilze with the scope of 0 because if there is no node then size is 0.
+        Node curr = head;
+        while(curr != null){
+            size++;
+            curr = curr.next;
+        }
+        return size;
+    }
+
 
 
 
@@ -64,7 +102,7 @@ public class LinkedList {
         do{
             System.out.println();
 
-            System.out.println("Welcome to LinkedList Program.");
+            
             
             System.out.println();
 
@@ -72,7 +110,10 @@ public class LinkedList {
             System.out.println();
             System.out.print("1. Create the LinkedList.\n");
             System.out.print("2. Display the LinkedList.\n");
-            System.out.print("3. Exit.\n");
+            System.out.print("3. Insert at the beginning.\n");
+            System.out.print("4. Insert at the end.\n");
+            System.out.print("5. Size of the LinkedList.\n");
+            System.out.print("6. Exit.\n");
             System.out.println();
             System.out.println("---------------------------------");
 
@@ -90,11 +131,24 @@ public class LinkedList {
                     ll.display();
                     break;
                 case 3:
+                    ll.insertAtBeg();
+                    break;
+                case 4: 
+                    ll.insertAtEnd();
+                    break;
+                case 5:
+                    System.out.println();
+                    System.out.println("LinkedList Size: " + ll.sizeOfLL());  
+                case 6:
+                    System.out.println();
                     System.out.println("Exit from the Code");
                     break;
                 default:
+                    System.out.println();
                     System.out.println("Invalid choice.");
             }
-        }while(true); //i want to run the loop infinite time.
+        }while(choice != 6); //if ay one enter the choice  6 then exit from the code.
+       
+        
     }
 }
