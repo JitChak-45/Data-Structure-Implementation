@@ -90,6 +90,21 @@ public class LinkedList {
         return size;
     }
 
+    // 6th : Methord inset at position.
+    public void insertAtPos(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the position where you want to insert the node: ");
+        int pos = sc.nextInt();
+        System.out.print("Enter the data you want to insert: ");
+        int data = sc.nextInt();
+        Node newNode = new Node(data);
+        Node curr = head;
+        for(int i=1; i<pos-1; i++){
+            curr = curr.next;
+        }
+        newNode.next = curr.next;
+        curr.next = newNode;
+    }
 
 
 
@@ -112,8 +127,9 @@ public class LinkedList {
             System.out.print("2. Display the LinkedList.\n");
             System.out.print("3. Insert at the beginning.\n");
             System.out.print("4. Insert at the end.\n");
-            System.out.print("5. Size of the LinkedList.\n");
-            System.out.print("6. Exit.\n");
+            System.out.print("5. Insert at the position.\n");
+            System.out.print("6. Size of the LinkedList.\n");
+            System.out.print("7. Exit.\n");
             System.out.println();
             System.out.println("---------------------------------");
 
@@ -137,9 +153,12 @@ public class LinkedList {
                     ll.insertAtEnd();
                     break;
                 case 5:
+                    ll.insertAtPos();
+                    break;
+                case 6:
                     System.out.println();
                     System.out.println("LinkedList Size: " + ll.sizeOfLL());  
-                case 6:
+                case 7:
                     System.out.println();
                     System.out.println("Exit from the Code");
                     break;
@@ -147,7 +166,7 @@ public class LinkedList {
                     System.out.println();
                     System.out.println("Invalid choice.");
             }
-        }while(choice != 6); //if ay one enter the choice  6 then exit from the code.
+        }while(choice != 7); //if ay one enter the choice  7 then exit from the code.
        
         
     }
