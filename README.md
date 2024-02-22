@@ -1,7 +1,18 @@
 # Data Structure Implementation 🧑‍💻🥇🛠️
- IT IS A PUBLIC REPO IN WHICH EVERYONE CAN CONTRIBUTE
+ 
+This repository contains implementations of various data structures. Each data structure is implemented in a separate file or directory, along with relevant documentation and examples.
 
- **This Repository keep Data Structure Implementation Only. 😅**
+## Table of Contents
+
+1. [LinkedList](#linkedlist)
+2. [Stack](#stack)
+3. [Queue](#queue)
+4. [Binary Search Tree](#binary-search-tree)
+
+
+
+
+**This Repository keep Data Structure Implementation Only. 😅**
 
 | No   | Title                                    | Implementation                                                      |
 | --- | ---------------------------------------- | ------------------------------------------------------------- |
