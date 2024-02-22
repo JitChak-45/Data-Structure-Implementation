@@ -4,7 +4,7 @@ This repository contains implementations of various data structures. Each data s
 
 ## Table of Contents
 
-1. [LinkedList](#linkedlist)
+1. [LinkedList](https://github.com/debapriyo007/Data-Structure-Implementation/blob/main/LinkedList/LinkedList.java))
 2. [Stack](#stack)
 3. [Queue](#queue)
 4. [Binary Search Tree](#binary-search-tree)
