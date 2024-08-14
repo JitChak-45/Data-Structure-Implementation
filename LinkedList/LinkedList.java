@@ -1,22 +1,22 @@
 import java.util.*;
 
-public class LinkedList {
+public class LinkedList<T> {
 
     //Creating a Node Class.
-    public static class Node{
+    public static class Node<T>{
         //define the Node properties.
-        int data; //a node contain data.
-        Node next; // next is pointer which will pointing the next node.
+        T data; //a node contain data.
+        Node<T> next; // next is pointer which will pointing the next node.
 
         //creating Constructor.
-        Node(int data){
+        Node(T data){
             this.data = data; //here this ref the curr object.
             this.next = null;
         }
     }
 
-    public static Node head;
-    public static Node tail;
+    public  Node<T> head;
+    public  Node<T> tail;
 
     //Creating the methords of LinkedList.
 
@@ -27,10 +27,10 @@ public class LinkedList {
         int n = sc.nextInt(); //taking the input from user how many nodes he want to create.
         for(int i=1; i<=n; i++){
             System.out.print("Enter the " + i + " Node data: ");
-            int data = sc.nextInt(); //take data as input from user.
+            T data = (T) sc.next(); //take data as input from user.
 
             //Here creating the new Node.
-            Node newNode = new Node(data);
+            Node<T> newNode = new Node<>(data);
 
             //if only one node is created then head and tail both are pointing the same node.
             //so, that node is be my head as well as tail.
@@ -47,7 +47,7 @@ public class LinkedList {
     //2nd : Methord Display..
     public void display(){
         System.out.println();
-        Node curr = head; //take a pointer on head node
+        Node<T> curr = head; //take a pointer on head node
         while(curr != null){ //if curr is not null. 
             System.out.print(curr.data + " -> "); //then print the data of curr node.
             curr = curr.next; //move the curr to the next node.
@@ -59,8 +59,8 @@ public class LinkedList {
     public void insertAtBeg(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the data you want to insert at the beginning: ");
-        int data = sc.nextInt();
-        Node newNode = new Node(data); //crating the new node with the data.
+        T data = (T) sc.next();
+        Node<T> newNode = new Node<>(data); //crating the new node with the data.
         newNode.next = head;//as i want to insert the new node at the beginning so, 
         //newnode next will be pointing the head.
         head = newNode;  // now update my head to the new node.
@@ -70,8 +70,8 @@ public class LinkedList {
     public void insertAtEnd(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the data you want to insert at the end: ");
-        int data = sc.nextInt();
-        Node newNode = new Node(data); //creating the new node with the data.
+        T data = (T) sc.next();
+        Node<T> newNode = new Node<>(data); //creating the new node with the data.
         tail.next = newNode; // tail alway be in the last node so, 
         // i just pointing the tail next to my new craeted node.
         tail = newNode; // update my tail pointer.
@@ -82,7 +82,7 @@ public class LinkedList {
     
     public int sizeOfLL(){
         int size = 0; //why initilze with the scope of 0 because if there is no node then size is 0.
-        Node curr = head;
+        Node<T> curr = head;
         while(curr != null){
             size++;
             curr = curr.next;
@@ -96,9 +96,9 @@ public class LinkedList {
         System.out.print("Enter the position where you want to insert the node: ");
         int pos = sc.nextInt();
         System.out.print("Enter the data you want to insert: ");
-        int data = sc.nextInt();
-        Node newNode = new Node(data);
-        Node curr = head;
+        T data = (T) sc.next();
+        Node<T> newNode = new Node<>(data);
+        Node<T> curr = head;
         for(int i=1; i<pos-1; i++){
             curr = curr.next;
         }
@@ -111,7 +111,7 @@ public class LinkedList {
 
     public static void main(String[] args) {
         
-        LinkedList ll = new LinkedList(); //creating the object of LinkedList.
+        LinkedList<String> ll = new LinkedList<>(); //creating the object of LinkedList.
         
         int choice;
         do{
